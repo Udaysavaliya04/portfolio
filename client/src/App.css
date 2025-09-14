@@ -183,10 +183,56 @@ p {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 20%, 
+    rgba(0, 212, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0.1) 80%, 
+    transparent 100%
+  );
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+/* Alternative section separator for better visibility */
+.section-separator {
+  position: relative;
+  height: 1px;
+  margin: 8rem 0;
+  overflow: hidden;
+}
+
+.section-separator::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.15) 25%, 
+    rgba(0, 212, 255, 0.4) 50%, 
+    rgba(255, 255, 255, 0.15) 75%, 
+    transparent 100%
+  );
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.section-separator::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 .text-center { text-align: center; }
@@ -1353,11 +1399,31 @@ textarea.form-input {
   border-color: rgba(239, 68, 68, 0.2);
 }
 
-.footer-bottom {
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  text-align: center;
+/* Footer Section with Separator */
+.footer {
+  position: relative;
+  padding: 1rem 0 1rem 0;
+  background: var(--primary);
 }
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 20%, 
+    rgba(0, 212, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0.1) 80%, 
+    transparent 100%
+  );
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
 
 .footer-bottom p {
   margin: 0;
