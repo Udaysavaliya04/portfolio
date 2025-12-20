@@ -16,7 +16,7 @@ app.use(express.json());
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio_contacts')
 .then(() => console.log('MongoDB connected to portfolio_contacts database'))
-.catch(err => console.log(err));
+.catch(err => console.error('MongoDB connection error:', err));
 
 // Contact Schema
 const contactSchema = new mongoose.Schema({
@@ -42,16 +42,8 @@ app.post('/api/contact', async (req, res) => {
     await newContact.save();
     res.status(201).json({ message: 'Message sent successfully!' });
   } catch (error) {
+    console.error('Error saving contact:', error);
     res.status(500).json({ error: 'Failed to send message' });
-  }
-});
-
-app.get('/api/contacts', async (req, res) => {
-  try {
-    const contacts = await Contact.find().sort({ createdAt: -1 });
-    res.json(contacts);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch contacts' });
   }
 });
 
