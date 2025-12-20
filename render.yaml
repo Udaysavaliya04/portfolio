@@ -1,0 +1,14 @@
+services:
+  # Web Service - Node.js Backend + React Frontend
+  - type: web
+    name: portfolio
+    runtime: node
+    buildCommand: npm run install-all && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: PORT
+        value: 10000
