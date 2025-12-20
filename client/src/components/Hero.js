@@ -81,7 +81,7 @@ const Hero = () => {
                   View My Work
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href= "https://drive.google.com/file/d/1ksm_bWhMd0-8r2-hkoIrjEwNoGksTgSg/view?usp=sharing"
                   className="btn btn-outline"
                   target="_blank"
                   rel="noopener noreferrer"
