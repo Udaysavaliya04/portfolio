@@ -6,39 +6,19 @@ const DYNAMIC_TEXTS = ["I ship fast", "I build at scale", "I deliver quality"];
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
-  const [isTyping, setIsTyping] = useState(true);
+  const [fade, setFade] = useState(true);
 
-  // Typewriter effect
   useEffect(() => {
-    const currentText = DYNAMIC_TEXTS[currentTextIndex];
-    let timeoutId;
-
-    if (isTyping) {
-      if (displayedText.length < currentText.length) {
-        timeoutId = setTimeout(() => {
-          setDisplayedText(currentText.slice(0, displayedText.length + 1));
-        }, 100); // Typing speed
-      } else {
-        // Wait before starting to delete
-        timeoutId = setTimeout(() => {
-          setIsTyping(false);
-        }, 2000);
-      }
-    } else {
-      if (displayedText.length > 0) {
-        timeoutId = setTimeout(() => {
-          setDisplayedText(displayedText.slice(0, -1));
-        }, 50); // Deleting speed
-      } else {
-        // Move to next text
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
         setCurrentTextIndex((prev) => (prev + 1) % DYNAMIC_TEXTS.length);
-        setIsTyping(true);
-      }
-    }
-
-    return () => clearTimeout(timeoutId);
-  }, [displayedText, isTyping, currentTextIndex]);
+        setFade(true);
+      }, 500);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const imageInterval = setInterval(() => {
@@ -62,9 +42,8 @@ const Hero = () => {
 
               <div className="hero-dynamic-text">
                 <h2 className="hero-tagline">
-                  <span className="dynamic-word gradient-text">
-                    {displayedText}
-                    <span className="typewriter-cursor">|</span>
+                  <span className={`dynamic-word gradient-text ${fade ? 'fade-in' : 'fade-out'}`}>
+                    {DYNAMIC_TEXTS[currentTextIndex]}
                   </span>
                 </h2>
               </div>

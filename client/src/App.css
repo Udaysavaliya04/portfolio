@@ -786,6 +786,9 @@ p {
 
 .hero-dynamic-text {
   margin: 2.5rem 0;
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
 }
 
 .hero-tagline {
@@ -798,6 +801,7 @@ p {
 
 .dynamic-word {
   position: relative;
+  display: inline-block;
 }
 
 .gradient-text {
@@ -807,14 +811,37 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% 200%;
-  animation: gradientShift 3s ease-in-out infinite;
+  display: inline-block;
 }
 
-.typewriter-cursor {
-  color: var(--accent);
-  animation: blink 1s infinite;
-  font-weight: normal;
-  margin-left: 2px;
+.fade-in {
+  animation: appleFadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.fade-out {
+  animation: appleFadeOut 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes appleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appleFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes gradientShift {
@@ -823,15 +850,6 @@ p {
   }
   50% {
     background-position: 100% 50%;
-  }
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
   }
 }
 
@@ -1683,7 +1701,15 @@ textarea.form-input {
     font-size: 1.125rem;
   }
 
-  .section-title {
+  .hero-dynamic-text {
+    min-height: 4rem;
+  }
+
+  .gradient-text {
+    font-size: 2rem;
+    min-width: 280px;
+  }
+.section-title {
     font-size: 2rem;
   }
 
