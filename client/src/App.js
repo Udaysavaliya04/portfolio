@@ -5,13 +5,11 @@ import PortfolioShowcase from './components/PortfolioShowcase';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import MobileWarning from './components/MobileWarning';
 import './App.css';
 
 function App() {
   return (
     <>
-      <MobileWarning />
       <Header />
       <div className="App loaded">
         <main>
