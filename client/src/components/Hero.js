@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  // Dynamic text animation with typewriter effect
-  const dynamicTexts = useMemo(() => ["I ship fast", "I build at scale", "I deliver quality"], []);
+  const dynamicTexts = ["I ship fast", "I build at scale", "I deliver quality"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
@@ -43,7 +41,7 @@ const Hero = () => {
 
   useEffect(() => {
     const imageInterval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % 8);
+      setCurrentImageIndex((prev) => (prev + 1) % 7);
     }, 3000);
     return () => clearInterval(imageInterval);
   }, []);

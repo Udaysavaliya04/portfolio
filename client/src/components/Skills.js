@@ -56,22 +56,15 @@ const Skills = () => {
               className="skill-category card"
               style={{ '--category-color': category.color }}
             >
-              <div className="category-header">
-                <div className="category-icon" style={{ color: category.color }}>
-                  {category.icon}
-                </div>
-                <h3>{category.title}</h3>
-              </div>
+              <h3>{category.title}</h3>
               
               <div className="skills-list">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="skill-item">
-                    <div className="skill-tag">
-                      <div className="skill-logo">
-                        <img src={skill.logo} alt={skill.name} />
-                      </div>
-                      <span className="skill-name">{skill.name}</span>
+                  <div key={skillIndex} className="skill-tag">
+                    <div className="skill-logo">
+                      <img src={skill.logo} alt={skill.name} />
                     </div>
+                    <span className="skill-name">{skill.name}</span>
                   </div>
                 ))}
               </div>
