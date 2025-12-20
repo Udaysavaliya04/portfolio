@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
 
+const DYNAMIC_TEXTS = ["I ship fast", "I build at scale", "I deliver quality"];
+
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const dynamicTexts = ["I ship fast", "I build at scale", "I deliver quality"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
 
   // Typewriter effect
   useEffect(() => {
-    const currentText = dynamicTexts[currentTextIndex];
+    const currentText = DYNAMIC_TEXTS[currentTextIndex];
     let timeoutId;
 
     if (isTyping) {
@@ -31,13 +32,13 @@ const Hero = () => {
         }, 50); // Deleting speed
       } else {
         // Move to next text
-        setCurrentTextIndex((prev) => (prev + 1) % dynamicTexts.length);
+        setCurrentTextIndex((prev) => (prev + 1) % DYNAMIC_TEXTS.length);
         setIsTyping(true);
       }
     }
 
     return () => clearTimeout(timeoutId);
-  }, [displayedText, isTyping, currentTextIndex, dynamicTexts]);
+  }, [displayedText, isTyping, currentTextIndex]);
 
   useEffect(() => {
     const imageInterval = setInterval(() => {
