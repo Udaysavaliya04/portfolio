@@ -1692,7 +1692,92 @@ textarea.form-input {
     font-size: 0.9rem;
   }
 
+  .contact-content {
+    gap: 2rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-items {
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    padding: 1.5rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .contact-item:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .contact-item svg {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.25rem;
+  }
+
+  .contact-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .contact-item p {
+    font-size: 0.875rem;
+    word-break: break-word;
+  }
+
+  .contact-item .social-links .social-link {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    padding: 0.625rem !important;
+  }
+
   .contact-form {
     padding: 1.5rem;
+  }
+
+  .contact-form:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .form-input:focus {
+    transform: translateY(-2px);
+  }
+
+  textarea.form-input {
+    min-height: 120px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-message {
+    font-size: 0.875rem;
+    padding: 0.75rem;
   }
 }
