@@ -55,7 +55,7 @@ const Hero = () => {
               </p>
 
               <div className="hero-actions">
-                <a href="#ProjectShowcase" className="btn btn-primary">
+                <a href="#portfolio-showcase" className="btn btn-primary">
                   View My Work
                 </a>
                 <a

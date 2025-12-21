@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 
-const Header = () => {
+const Header = ({ toggleTheme, isDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -28,23 +28,34 @@ const Header = () => {
           <a href="#home" className="nav-link">
             Home
           </a>
-          
+
           <div className={`nav-menu ${isMenuOpen ? 'nav-menu-open' : ''}`}>
-              {navItems.map((item) => (
-                <a 
-                  key={item.label}
-                  href={item.href} 
-                  className="nav-link"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              
-            </div>
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+
+          </div>
         </div>
 
         <div className="nav-socials">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            <div className="theme-toggle-track">
+              <div className={`theme-toggle-thumb ${isDarkMode ? 'dark' : 'light'}`}>
+                {isDarkMode ? <Moon size={14} /> : <Sun size={14} />}
+              </div>
+            </div>
+          </button>
           <a href="https://github.com/Udaysavaliya04" target="_blank" rel="noopener noreferrer" className="nav-link">
             <Github size={20} />
           </a>
@@ -55,13 +66,26 @@ const Header = () => {
             <Mail size={20} />
           </a>
         </div>
-        
-        <button 
-          className="nav-toggle"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+
+        <div className="nav-mobile-controls">
+          <button
+            className="theme-toggle theme-toggle-mobile"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            <div className="theme-toggle-track">
+              <div className={`theme-toggle-thumb ${isDarkMode ? 'dark' : 'light'}`}>
+                {isDarkMode ? <Moon size={14} /> : <Sun size={14} />}
+              </div>
+            </div>
+          </button>
+          <button
+            className="nav-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
     </header>
   );
