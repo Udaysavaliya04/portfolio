@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-bottom" style={{ padding: '30px', fontWeight: 'bold', fontSize: '20px' }}>
           <p>
-            Made with <Heart size={16} className="heart" /> By Uday Savaliya
+            Made with <Heart size={16} className="heart" /> by Uday Savaliya
           </p>
         </div>
       </div>
