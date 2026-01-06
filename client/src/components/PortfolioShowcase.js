@@ -8,7 +8,7 @@ const ProjectShowcase = () => {
       title: "TECHIFY",
       category: "Full Stack",
       description:
-        "Redefining how tech interviews are done — live code execution compiler, editor, face-to-face, and feedback-ready, all in one powerful browser tab.",
+        "Redefining how technical interviews are done — live code compiler, integrated monaco code editor, Real-time Video Calls and Report Generation all in one powerful browser tab.",
       image: "/Techify App.png",
       tags: [
         "React",
