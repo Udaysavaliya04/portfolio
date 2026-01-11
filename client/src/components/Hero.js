@@ -36,7 +36,7 @@ const Hero = () => {
               <div className="hero-greeting">
                 <span className="greeting-text">Hi, I'm</span>
                 <h1 className="hero-name">
-                  <span className="section-title">Uday Savaliya</span>
+                  <span className="section-title" style={{ background: 'linear-gradient(180deg, white, rgba(0, 153, 255, 0.3 ))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Uday Savaliya</span>
                 </h1>
               </div>
 
