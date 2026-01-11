@@ -53,8 +53,7 @@ const Contact = () => {
           <div className="contact-info">
             <h3>Contact Information</h3>
             <p>
-              Feel free to reach out to me for any inquiries or collaboration
-              opportunities.
+              Let's build something purposeful together. Whether you have a project in mind or just want to connect, I'd love to hear.
             </p>
 
             <div className="contact-items">
@@ -112,6 +111,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="form-input"
+                  placeholder="John Doe"
                 />
               </div>
 
@@ -125,6 +125,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="form-input"
+                  placeholder="john@example.com"
                 />
               </div>
 
@@ -138,6 +139,7 @@ const Contact = () => {
                   required
                   rows="5"
                   className="form-input"
+                  placeholder="Write your message here..."
                 ></textarea>
               </div>
 

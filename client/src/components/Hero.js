@@ -34,9 +34,9 @@ const Hero = () => {
           <div className="hero-left">
             <div className="hero-text">
               <div className="hero-greeting">
-                <span className="greeting-text">Hi, I'm</span>
+                <span className="greeting-text" style={{ fontFamily: 'Instrument' }}>Hey, I am</span>
                 <h1 className="hero-name">
-                  <span className="section-title" style={{ background: 'linear-gradient(180deg, white, rgba(0, 153, 255, 0.3 ))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Uday Savaliya</span>
+                  <span className="section-title" style={{color: "white", letterSpacing: "+0.01em" }}>Uday Savaliya</span>
                 </h1>
               </div>
 
@@ -49,9 +49,7 @@ const Hero = () => {
               </div>
 
               <p className="hero-description">
-                Building scalable web solutions that solve complex problems
-                efficiently. Full Stack Developer passionate about modern
-                technologies and user experience.
+                Building high-performance microservices, event-driven architectures, and distributed systems that scale gracefully under load. I care about clean architecture, performance and distributed design.
               </p>
 
               <div className="hero-actions">
