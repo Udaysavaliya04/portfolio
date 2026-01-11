@@ -47,7 +47,7 @@ const Header = ({ toggleTheme, isDarkMode }) => {
         <div className="nav-socials">
           <button
             className="theme-toggle"
-            onClick={toggleTheme}
+            onClick={(e) => toggleTheme(e)}
             aria-label="Toggle theme"
           >
             <div className="theme-toggle-track">
@@ -70,7 +70,7 @@ const Header = ({ toggleTheme, isDarkMode }) => {
         <div className="nav-mobile-controls">
           <button
             className="theme-toggle theme-toggle-mobile"
-            onClick={toggleTheme}
+            onClick={(e) => toggleTheme(e)}
             aria-label="Toggle theme"
           >
             <div className="theme-toggle-track">

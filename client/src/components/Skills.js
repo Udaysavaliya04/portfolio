@@ -45,7 +45,7 @@ const Skills = () => {
             Skills & <span className="text-accent">Expertise</span>
           </h2>
           <p className="section-description" style={{ fontSize: '1.3rem'}}>
-            An overview of the technologies and tools I use to bring ideas to life
+            An overview of the technologies and tools I use to bring ideas to life.
           </p>
         </div>
         
