@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="hero-left">
             <div className="hero-text">
               <div className="hero-greeting">
-                <span className="greeting-text" style={{ fontFamily: 'Instrument' }}>Hey, I am</span>
+                <span className="greeting-text" style={{ fontFamily: 'Instrument' }}>Hi! I'm</span>
                 <h1 className="hero-name">
                   <span className="section-title" style={{color: "white", letterSpacing: "+0.01em" }}>Uday Savaliya</span>
                 </h1>
@@ -70,84 +70,89 @@ const Hero = () => {
           </div>
 
           <div className="hero-right">
-            <div className="hero-image-container">
-              <div className="image-carousel">
-                <div
-                  className={`carousel-item ${
-                    currentImageIndex === 0 ? "active" : ""
-                  }`}
-                >
-                  <div className="tech-showcase">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-                  </div>
-                </div>
-                <div
-                  className={`carousel-item ${
-                    currentImageIndex === 1 ? "active" : ""
-                  }`}
-                >
-                  <div className="tech-showcase">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
-                  </div>
-                </div>
-                <div
-                  className={`carousel-item ${
-                    currentImageIndex === 2 ? "active" : ""
-                  }`}
-                >
-                  <div className="tech-showcase">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-                  </div>
-                </div>
-                <div
-                  className={`carousel-item ${
-                    currentImageIndex === 3 ? "active" : ""
-                  }`}
-                >
-                  <div className="tech-showcase">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-                  </div>
-                </div>
-                <div
-                  className={`carousel-item ${
-                    currentImageIndex === 4 ? "active" : ""
-                  }`}
-                >
-                  <div className="tech-showcase">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-                  </div>
-                </div>
-                <div
-                  className={`carousel-item ${
-                    currentImageIndex === 5 ? "active" : ""
-                  }`}
-                >
-                  <div className="tech-showcase">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" />
-                  </div>
-                </div>
-                <div
-                  className={`carousel-item ${
-                    currentImageIndex === 6 ? "active" : ""
-                  }`}
-                >
-                  <div className="tech-showcase">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Image indicators */}
-              <div className="carousel-indicators">
-                {[0, 1, 2, 3, 4, 5, 6].map((index) => (
-                  <button
-                    key={index}
-                    className={`indicator ${
-                      currentImageIndex === index ? "active" : ""
+            <div className="glass-carousel-container">
+              <div className="glass-reflection-layer"></div>
+              <div className="glass-noise-overlay"></div>
+              
+              <div className="inner-glass-content">
+                <div className="image-carousel">
+                  <div
+                    className={`carousel-item ${
+                      currentImageIndex === 0 ? "active" : ""
                     }`}
-                    onClick={() => setCurrentImageIndex(index)}
-                  />
-                ))}
+                  >
+                    <div className="tech-showcase">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+                    </div>
+                  </div>
+                  <div
+                    className={`carousel-item ${
+                      currentImageIndex === 1 ? "active" : ""
+                    }`}
+                  >
+                    <div className="tech-showcase">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+                    </div>
+                  </div>
+                  <div
+                    className={`carousel-item ${
+                      currentImageIndex === 2 ? "active" : ""
+                    }`}
+                  >
+                    <div className="tech-showcase">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+                    </div>
+                  </div>
+                  <div
+                    className={`carousel-item ${
+                      currentImageIndex === 3 ? "active" : ""
+                    }`}
+                  >
+                    <div className="tech-showcase">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                    </div>
+                  </div>
+                  <div
+                    className={`carousel-item ${
+                      currentImageIndex === 4 ? "active" : ""
+                    }`}
+                  >
+                    <div className="tech-showcase">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+                    </div>
+                  </div>
+                  <div
+                    className={`carousel-item ${
+                      currentImageIndex === 5 ? "active" : ""
+                    }`}
+                  >
+                    <div className="tech-showcase">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" />
+                    </div>
+                  </div>
+                  <div
+                    className={`carousel-item ${
+                      currentImageIndex === 6 ? "active" : ""
+                    }`}
+                  >
+                    <div className="tech-showcase">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Image indicators */}
+                <div className="carousel-indicators">
+                  {[0, 1, 2, 3, 4, 5, 6].map((index) => (
+                    <button
+                      key={index}
+                      className={`indicator ${
+                        currentImageIndex === index ? "active" : ""
+                      }`}
+                      onClick={() => setCurrentImageIndex(index)}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
