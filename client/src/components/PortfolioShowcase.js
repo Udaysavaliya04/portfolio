@@ -10,7 +10,7 @@ const ProjectShowcase = () => {
       category: "Full Stack",
       description:
         "Redefining how technical interviews are done — live code compiler, integrated monaco code editor, Real-time Video Calls and Report Generation all in one powerful browser tab.",
-      image: "/Techify App.png",
+      image: "/Techify App.webp",
       tags: [
         "React",
         "Node.js",
@@ -34,7 +34,7 @@ const ProjectShowcase = () => {
       category: "Full Stack",
       description:
         "Secure Password Manager application with end-to-end encryption. Built using React, Node.js. Implements AES-256 encryption for data security.",
-      image: "/prysm app.png",
+      image: "/prysm app.webp",
       tags: [
         "React",
         "Node.js",
