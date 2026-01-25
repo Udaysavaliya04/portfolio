@@ -10,7 +10,7 @@ const ProjectShowcase = () => {
       category: "Full Stack",
       description:
         "Redefining how technical interviews are done — live code compiler, integrated monaco code editor, Real-time Video Calls and Report Generation all in one powerful browser tab.",
-      image: "/Techify App.webp",
+      image: "/Techify App2.webp",
       tags: [
         "React",
         "Node.js",
