@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, MapPin, Mail, Github, Linkedin } from 'lucide-react';
+import { Send, MapPin, Mail, Github, Linkedin, Loader2 } from 'lucide-react';
 import Reveal from './Reveal';
 import axios from 'axios';
 
@@ -152,8 +152,17 @@ const Contact = () => {
                 </div>
 
                 <button type="submit" disabled={isSubmitting} className="btn">
-                  <Send size={20} />
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      Send Message
+                    </>
+                  )}
                 </button>
 
                 {submitStatus === "success" && (

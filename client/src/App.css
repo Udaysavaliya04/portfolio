@@ -312,6 +312,15 @@ p {
   51%, 100% { border-color: var(--accent); }
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
 @keyframes navSlideDown {
   from { opacity: 0; transform: translateY(-100%); }
   to { opacity: 1; transform: translateY(0); }
@@ -427,17 +436,44 @@ p {
   background: rgba(255, 255, 255, 0.03);
   color: var(--text-primary);
   backdrop-filter: blur(10px);
+  z-index: 1;
 }
 
 :root[data-theme="light"] .btn {
   border-color: var(--border);
 }
 
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s ease;
+  filter: blur(10px);
+}
+
 .btn:hover {
-  background: rgba(255, 255, 255, 0.08);
   border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+  opacity: 0.15;
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* Cards */
@@ -847,7 +883,102 @@ p {
   position: relative;
 }
 
-/* Portfolio Showcase Section */
+/* Scroll To Top Button - Liquid Glass Apple Style */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05); /* Ultra subtle base */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 999;
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  overflow: hidden;
+}
+
+:root[data-theme="light"] .scroll-to-top {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--primary);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Liquid/Glow Hover Effect */
+.scroll-to-top::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s ease;
+  filter: blur(8px);
+}
+
+.scroll-to-top:hover {
+  border-color: transparent;
+  transform: translateY(-5px) scale(1.1);
+  color: white;
+  box-shadow: 0 10px 40px -10px var(--accent);
+}
+
+.scroll-to-top:hover::before {
+  opacity: 0.8;
+  width: 120%;
+  height: 120%;
+  filter: blur(12px); /* Liquid bloom */
+}
+
+.scroll-to-top:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* Arrow Animation */
+.scroll-to-top svg {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scroll-to-top:hover svg {
+  transform: translateY(-3px) scale(1.1);
+}
 .portfolio-showcase {
   background: var(--secondary);
   position: relative;

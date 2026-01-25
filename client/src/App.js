@@ -7,6 +7,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
 
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
@@ -70,6 +72,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <ScrollToTop />
       </div>
     </>
   );
