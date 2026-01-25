@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import './App.css';
 
 import ScrollToTop from './components/ScrollToTop';
+import VibeWidget from './components/VibeWidget';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -72,6 +73,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <VibeWidget />
         <ScrollToTop />
       </div>
     </>
