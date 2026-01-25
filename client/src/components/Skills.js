@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from './Reveal';
 const Skills = () => {
   const skillCategories = [
     {
@@ -40,19 +41,26 @@ const Skills = () => {
     <section id="skills" className="skills section">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">TECHNOLOGIES</span>
-          <h2 className="section-title">
-            Skills & <span className="text-accent">Expertise</span>
-          </h2>
-          <p className="section-description" style={{ fontSize: '1.3rem'}}>
-            An overview of the technologies and tools I use to bring ideas to life.
-          </p>
+          <Reveal>
+            <span className="section-tag">TECHNOLOGIES</span>
+          </Reveal>
+          <Reveal delay={100}>
+            <h2 className="section-title">
+              Skills & <span className="text-accent">Expertise</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="section-description" style={{ fontSize: '1.3rem'}}>
+              An overview of the technologies and tools I use to bring ideas to life.
+            </p>
+          </Reveal>
         </div>
         
         <div className="skills-grid">
           {skillCategories.map((category, index) => (
-            <div 
+            <Reveal 
               key={index} 
+              delay={index * 150} 
               className="skill-category card"
               style={{ '--category-color': category.color }}
             >
@@ -68,7 +76,7 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, MapPin, Mail, Github, Linkedin } from 'lucide-react';
+import Reveal from './Reveal';
 import axios from 'axios';
 
 const Contact = () => {
@@ -41,125 +42,133 @@ const Contact = () => {
     <section id="contact" className="contact section">
       <div className="container">
         <div className="text-center">
-          <h2 className="section-title">
-            Get In <span className="text-accent">Touch</span>
-          </h2>
-          <p className="section-description">
-            Let's discuss your next project or opportunity
-          </p>
+          <Reveal>
+            <h2 className="section-title">
+              Get In <span className="text-accent">Touch</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="section-description">
+              Let's discuss your next project or opportunity
+            </p>
+          </Reveal>
         </div>
 
         <div className="contact-content">
-          <div className="contact-info">
-            <h3>Contact Information</h3>
-            <p>
-              Let's build something purposeful together. Whether you have a project in mind or just want to connect, I'd love to hear.
-            </p>
+          <Reveal delay={300} className="contact-info-wrapper">
+            <div className="contact-info">
+              <h3>Contact Information</h3>
+              <p>
+                Let's build something purposeful together. Whether you have a project in mind or just want to connect, I'd love to hear.
+              </p>
 
-            <div className="contact-items">
-              <div className="contact-item">
-                <MapPin size={24} />
-                <div>
-                  <h4>Location</h4>
-                  <p>Gujarat, India.</p>
+              <div className="contact-items">
+                <div className="contact-item">
+                  <MapPin size={24} />
+                  <div>
+                    <h4>Location</h4>
+                    <p>Gujarat, India.</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="contact-item">
-                <Mail size={24} />
-                <div>
-                  <h4>Email</h4>
-                  <p>udaysavaliya2004@gmail.com</p>
+                <div className="contact-item">
+                  <Mail size={24} />
+                  <div>
+                    <h4>Email</h4>
+                    <p>udaysavaliya2004@gmail.com</p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="contact-item">
-                <div>
-                  <h4>Follow Me</h4>
-                  <div className="social-links">
-                    <a
-                      href="https://github.com/Udaysavaliya04"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-link"
-                    >
-                      <Github size={20} />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/uday-savaliya-b30bb7286"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-link"
-                    >
-                      <Linkedin size={20} />
-                    </a>
+                <div className="contact-item">
+                  <div>
+                    <h4>Follow Me</h4>
+                    <div className="social-links">
+                      <a
+                        href="https://github.com/Udaysavaliya04"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-link"
+                      >
+                        <Github size={20} />
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/uday-savaliya-b30bb7286"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-link"
+                      >
+                        <Linkedin size={20} />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="contact-form-container">
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
-                <label htmlFor="name">Name:</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                  placeholder="John Doe"
-                />
-              </div>
+          <Reveal delay={500} className="contact-form-wrapper">
+            <div className="contact-form-container">
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-group">
+                  <label htmlFor="name">Name:</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="form-input"
+                    placeholder="John Doe"
+                  />
+                </div>
 
-              <div className="form-group">
-                <label htmlFor="email">Email:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                  placeholder="john@example.com"
-                />
-              </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="form-input"
+                    placeholder="john@example.com"
+                  />
+                </div>
 
-              <div className="form-group">
-                <label htmlFor="message">Message:</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  className="form-input"
-                  placeholder="Write your message here..."
-                ></textarea>
-              </div>
+                <div className="form-group">
+                  <label htmlFor="message">Message:</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="5"
+                    className="form-input"
+                    placeholder="Write your message here..."
+                  ></textarea>
+                </div>
 
-              <button type="submit" disabled={isSubmitting} className="btn">
-                <Send size={20} />
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </button>
+                <button type="submit" disabled={isSubmitting} className="btn">
+                  <Send size={20} />
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
 
-              {submitStatus === "success" && (
-                <p className="form-message success">
-                  Message sent successfully!
-                </p>
-              )}
-              {submitStatus === "error" && (
-                <p className="form-message error">
-                  Error sending message. Please try again.
-                </p>
-              )}
-            </form>
-          </div>
+                {submitStatus === "success" && (
+                  <p className="form-message success">
+                    Message sent successfully!
+                  </p>
+                )}
+                {submitStatus === "error" && (
+                  <p className="form-message error">
+                    Error sending message. Please try again.
+                  </p>
+                )}
+              </form>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

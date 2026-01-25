@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import Reveal from './Reveal';
 
 const ProjectShowcase = () => {
   const featuredProjects = [
@@ -52,19 +53,24 @@ const ProjectShowcase = () => {
     <section id="portfolio-showcase" className="portfolio-showcase section">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">
-            Featured <span className="text-accent">Projects</span>
-          </h2>
-          <p className="section-description">
-            A showcase of my recent work and experiments in web development, 
-            featuring modern technologies and innovative solutions.
-          </p>
+          <Reveal>
+            <h2 className="section-title">
+              Featured <span className="text-accent">Projects</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="section-description">
+              A showcase of my recent work and experiments in web development, 
+              featuring modern technologies and innovative solutions.
+            </p>
+          </Reveal>
         </div>
 
         <div className="portfolio-grid">
           {featuredProjects.map((project, index) => (
-            <div 
+            <Reveal 
               key={project.id} 
+              delay={index * 200}
               className={`portfolio-item ${project.featured ? 'featured' : ''} ${index % 2 === 0 ? 'left' : 'right'}`}
             >
               <div className="project-image">
@@ -120,7 +126,7 @@ const ProjectShowcase = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
