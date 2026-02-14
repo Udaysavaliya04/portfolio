@@ -44,9 +44,51 @@ const ProjectShowcase = () => {
         "MongoDB",
       ],
       github: "https://github.com/Udaysavaliya04/prysm",
-      live: "https://github.com/Udaysavaliya04/prysm",
+      live: "https://prysm-password-manager.onrender.com",
       featured: true,
     },
+    {
+      id: 3,
+      title: "LOANWOLF",
+      category: "Full Stack",
+      description:
+        "Loanwolf is a platform that helps Track shifting rates, simulate extra payments with help of advisory services and escape debt faster in every type of loans.",
+      image: "/loanwolf.webp",
+      tags: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "Material-UI",
+        "Gemini API",
+        "JWT",
+        "Express.js",
+        "MongoDB",
+        "Vite"
+      ],
+      github: "https://github.com/Udaysavaliya04/loanwolf",
+      live: "https://loanwolf-platform.onrender.com",
+      featured: true,
+    },
+    {
+      id: 4,
+      title: "LUMIÈRE",
+      category: "Full Stack",
+      description:
+        "Modern, luxury jewelry store website built with React, Tailwind CSS, animations, aesthetics and some love.",
+      image: "/lumiere.webp",
+      tags: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "Tailwind",
+        "Framer Motion",
+        "MongoDB",
+      ],
+      github: "https://github.com/Udaysavaliya04/lumiere",
+      live: "https://lumiere-jewels.onrender.com",
+      featured: true,
+    },
+    
   ];
 
   return (
